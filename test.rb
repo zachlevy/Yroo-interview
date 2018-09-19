@@ -57,3 +57,22 @@ mission3.explore
 # rover 1 final destination
 puts "5 4 S" == mission3.locate[0]
 puts "3 2 S" == mission3.locate[1]
+
+
+
+# mission 4
+# have rovers collide
+
+filepath4 = "hadron.txt"
+mission4 = Mission.new(filepath4)
+
+mission4.land
+
+puts "3 3 N" == mission4.locate[0]
+
+begin
+  mission4.explore
+  puts false
+rescue => e
+  puts Rover::RoverColission == e.class
+end

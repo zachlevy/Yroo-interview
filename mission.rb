@@ -3,6 +3,7 @@ require_relative './rover'
 # specify a file
 class Mission
   attr_reader :map
+  attr_reader :rovers
 
   def initialize file_path
     @mission_plan = file_path
@@ -24,7 +25,7 @@ class Mission
           location = line.gsub("\n", "")
           # start location
           # line is the location of the rover
-          @rovers << Rover.new(@map, location)
+          @rovers << Rover.new(@map, location, self)
         end
       end
     end
