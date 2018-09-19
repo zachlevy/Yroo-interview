@@ -5,16 +5,18 @@
 
 #### Getting Started
 `$ ruby simulate.rb path/to/your_mission_plan.txt` to create your own mission.
-
+`$ ruby simulate.rb missions/curiosity.txt` is a sample mission
 `$ ruby test.rb` to run tests.
 
 #### Zach's mental notes for his approach
 * 'L', 'R' and 'M' are movements
 * iterate over movements string
-* create an array of NSEW, sum, get the remainder of rotations
-* store a location {x: 1, y: 1} object
+* create an array of NSEW, sum, get the remainder of rotations. -- it was easier to just rotate for each character
+* store a location {x: 1, y: 1} object -- added direction to this later
 * add and subtract based on the new direction (use an if statement)
 * return the location
+* create classes for rovers and missions, simulation handles the
+* didn't bother with a testing library. just `puts expected_result == result` so all tests should output `true`
 
 #### The Problem
 A squad of robotic rovers are to be landed by NASA on a plateau on Mars. This plateau,

@@ -1,6 +1,5 @@
 require_relative './rover'
 
-# specify a file
 class Mission
   attr_reader :map
   attr_reader :rovers
@@ -53,6 +52,7 @@ class Mission
     end
   end
 
+  # return human friendly locations in an array
   def locate
     @rovers.map do |rover|
       rover.locate

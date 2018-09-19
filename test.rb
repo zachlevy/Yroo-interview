@@ -1,7 +1,8 @@
 require_relative './mission'
-require_relative './rover'
 
 # mission 1
+# sample tests case
+
 filepath1 = "missions/curiosity.txt"
 mission1 = Mission.new(filepath1)
 
