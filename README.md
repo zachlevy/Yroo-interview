@@ -5,7 +5,9 @@
 
 #### Getting Started
 `$ ruby simulate.rb path/to/your_mission_plan.txt` to create your own mission.
+
 `$ ruby simulate.rb missions/curiosity.txt` is a sample mission
+
 `$ ruby test.rb` to run tests.
 
 #### Zach's mental notes for his approach
