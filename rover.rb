@@ -20,7 +20,7 @@ class Rover
 
     if direction == "R"
       direction_index += 1
-    else
+    elsif direction == "L"
       direction_index -= 1
     end
 
