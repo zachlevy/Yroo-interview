@@ -21,6 +21,7 @@
 * return the location
 * create classes for rovers and missions, simulation handles the
 * didn't bother with a testing library. just `puts expected_result == result` so all tests should output `true`
+* assume valid inputs
 
 #### The Problem
 A squad of robotic rovers are to be landed by NASA on a plateau on Mars. This plateau,
