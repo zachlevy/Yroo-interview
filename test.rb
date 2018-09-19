@@ -46,3 +46,14 @@ end
 
 # mission 3
 # weird commands
+
+filepath3 = "moon_mist.txt"
+mission3 = Mission.new(filepath3)
+
+mission3.land
+
+mission3.explore
+
+# rover 1 final destination
+puts "5 4 S" == mission3.locate[0]
+puts "3 2 S" == mission3.locate[1]
