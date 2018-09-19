@@ -26,4 +26,9 @@ class Mission
     end
   end
 
+  def locate
+    @rovers.each do |rover|
+      puts rover.locate
+    end
+  end
 end
