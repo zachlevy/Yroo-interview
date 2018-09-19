@@ -19,7 +19,6 @@ class Mission
           location = line.gsub("\n", "")
           # start location
           # line is the location of the rover
-          puts location.inspect
           @rovers << Rover.new(location)
         end
       end
@@ -43,8 +42,8 @@ class Mission
   end
 
   def locate
-    @rovers.each do |rover|
-      puts rover.locate
+    @rovers.map do |rover|
+      rover.locate
     end
   end
 end
