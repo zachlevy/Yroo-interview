@@ -1,6 +1,8 @@
 ### Mars Rovers
 `rover.rb` Contains the code related to a single rover.
+
 `mission.rb` Contains the code related to sending a mission.
+
 `simulation.rb` is the main file to run. It takes an argument from the command line which is the path of the mission plan.
 
 #### Getting Started
