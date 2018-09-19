@@ -1,13 +1,27 @@
+# add out of bounds error for falling off plateau
 class Rover
+  class RoverOffPlateau < StandardError
+    def message
+      "Rover is located outside of the plateau!"
+    end
+  end
+
   CARDINAL_DIRECTIONS = ["N", "E", "S", "W"]
 
   # location formatted as: "1 2 N"
-  def initialize location
+  def initialize map, location
     location_split = location.split(" ")
     @location = {
       x: location_split[0].to_i,
       y: location.split(" ")[1].to_i,
       direction: location.split[2]
+    }
+    map_split = map.split(" ")
+    @map = {
+      min_x: 0,
+      min_y: 0,
+      max_x: map_split[0].to_i,
+      max_y: map_split[1].to_i
     }
   end
 
@@ -50,6 +64,12 @@ class Rover
     when "W"
       @location[:x] -= 1
     end
+    check_bounds
+  end
+
+  # check if the rover is off the plateau
+  def check_bounds
+    raise RoverOffPlateau if @location[:y] < @map[:min_y] || @location[:x] < @map[:min_x] || @location[:y] > @map[:max_y] || @location[:x] > @map[:max_x]
   end
 
 end
