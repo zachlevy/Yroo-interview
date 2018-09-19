@@ -20,7 +20,8 @@ puts "1 3 N" == mission1.locate[0]
 puts "5 1 E" == mission1.locate[1]
 
 # ensure the map gets loaded
-puts "5 5" == mission1.map
+puts 5 == mission1.map[:max_x]
+puts 5 == mission1.map[:max_y]
 
 
 

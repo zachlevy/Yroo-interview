@@ -18,14 +18,20 @@ class Mission
     File.open(@mission_plan, "r") do |f|
       f.each_line.with_index do |line, index|
         if index == 0
-          @map = line.gsub("\n", "")
+          map_split = line.gsub("\n", "").split(" ")
+          @map = {
+            min_x: 0,
+            min_y: 0,
+            max_x: map_split[0].to_i,
+            max_y: map_split[1].to_i
+          }
         end
 
         if index % 2 == 1
           location = line.gsub("\n", "")
           # start location
           # line is the location of the rover
-          @rovers << Rover.new(@map, location, self)
+          @rovers << Rover.new(location, self)
         end
       end
     end

@@ -17,19 +17,12 @@ class Rover
   CARDINAL_DIRECTIONS = ["N", "E", "S", "W"]
 
   # location formatted as: "1 2 N"
-  def initialize map, location, mission
+  def initialize location, mission
     location_split = location.split(" ")
     @location = {
       x: location_split[0].to_i,
       y: location.split(" ")[1].to_i,
       direction: location.split[2]
-    }
-    map_split = map.split(" ")
-    @map = {
-      min_x: 0,
-      min_y: 0,
-      max_x: map_split[0].to_i,
-      max_y: map_split[1].to_i
     }
     @mission = mission
   end
@@ -79,7 +72,8 @@ class Rover
 
   # check if the rover is off the plateau
   def check_bounds
-    raise RoverOffPlateau if @location[:y] < @map[:min_y] || @location[:x] < @map[:min_x] || @location[:y] > @map[:max_y] || @location[:x] > @map[:max_x]
+    map = @mission.map
+    raise RoverOffPlateau if @location[:y] < map[:min_y] || @location[:x] < map[:min_x] || @location[:y] > map[:max_y] || @location[:x] > map[:max_x]
   end
 
   # check if two rovers on the mission collide
