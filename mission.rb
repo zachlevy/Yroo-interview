@@ -26,6 +26,22 @@ class Mission
     end
   end
 
+  # moves the rovers
+  # Each rover will be finished sequentially, which means that the second rover won't start to move until the first one has finished moving.
+  def explore
+    # get data from file
+    File.open(@mission_plan, "r") do |f|
+      f.each_line.with_index do |line, index|
+        if index % 2 == 0
+          transmission = line.gsub("\n", "")
+          # transmit rover movements
+          rover = @rovers[(index / 2) - 1]
+          rover.receive_transmission(transmission)
+        end
+      end
+    end
+  end
+
   def locate
     @rovers.each do |rover|
       puts rover.locate
