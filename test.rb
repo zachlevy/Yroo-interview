@@ -2,7 +2,7 @@ require_relative './mission'
 require_relative './rover'
 
 # mission 1
-filepath1 = "curiosity.txt"
+filepath1 = "missions/curiosity.txt"
 mission1 = Mission.new(filepath1)
 
 mission1.land
@@ -27,7 +27,7 @@ puts "5 5" == mission1.map
 # mission 2
 # have rover move off of plateau
 
-filepath2 = "icarus.txt"
+filepath2 = "missions/icarus.txt"
 mission2 = Mission.new(filepath2)
 
 mission2.land
@@ -47,7 +47,7 @@ end
 # mission 3
 # weird commands
 
-filepath3 = "moon_mist.txt"
+filepath3 = "missions/moon_mist.txt"
 mission3 = Mission.new(filepath3)
 
 mission3.land
@@ -63,7 +63,7 @@ puts "3 2 S" == mission3.locate[1]
 # mission 4
 # have rovers collide
 
-filepath4 = "hadron.txt"
+filepath4 = "missions/hadron.txt"
 mission4 = Mission.new(filepath4)
 
 mission4.land
